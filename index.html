@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Boton Flotante</title>
+</head>
+<body>
+    <h1>CONTENIDO DE PAGINA</h1>
+    <p>el boton esta fijo abajo a la izquierda. haz clici para ver la imagen.</p>
+
+    <button class="boton-windows" onclick="toggleImagen()">Inicio</button>
+
+
+    <div id="cerrar" class="cerrar-imagen" onclick="cerrarImagen()">
+        <div class="menu-windows" onclick="event.stopPropagation()">
+            <img src="menu-inicio.png" alt="imagen desplegada" class="imagen-menu-windows">
+        </div>
+    </div>
+    <script src="javaScript.js"></script> 
+</body>
+</html>

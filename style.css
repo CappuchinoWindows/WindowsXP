@@ -1,0 +1,102 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(bliss.jpg)
+}
+.boton-windows{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 120px;
+    height: 60px;
+    background-color: green;
+    color: aliceblue;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s;
+    font-size: 24px;
+}
+.cerrar-imagen {
+    position: fixed;
+    bottom: 60px; 
+    left: 0.5px;
+    display: none;
+    z-index: 9999;
+}
+
+
+.boton-windows:hover{
+    transform: scale(1.1);
+}
+.menu-windows{
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 90%;      /* Se adapta a pantallas pequeñas */
+    width: 350px;        /* Tamaño ideal en pantallas grandes */
+    box-sizing: border-box;
+    position: relative;
+    animation: aparecer 0.25s ease-out;
+}
+.imagen-menu-windows{
+    width: 130%;
+    height: auto;
+}
+
+
+.boton-flotante:hover{
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+/* 📌 Pantallas pequeñas (portátiles y pantallas reducidas) */
+@media (max-width: 900px) {
+    .cerrar-imagen {
+        bottom: 80px;   /* más cerca del botón */
+        left: 15px;     /* más hacia adentro */
+    }
+
+    .menu-windows {
+        width: 280px;   /* más pequeño para pantallas pequeñas */
+        padding: 15px;
+    }
+
+    .imagen-menu-windows {
+        max-width: 240px;
+        width: 100%;
+    }
+
+    .boton-windows {
+        width: 90px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+/* 📌 Celulares / pantallas muy estrechas */
+@media (max-width: 600px) {
+    .cerrar-imagen {
+        bottom: 70px;
+        left: 10px;
+    }
+
+    .menu-windows {
+        width: 90%;    /* usa casi toda la pantalla */
+    }
+
+    .imagen-menu-windows {
+        max-width: 200px;
+    }
+
+    .boton-windows {
+        width: 80px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
