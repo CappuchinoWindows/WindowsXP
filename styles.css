@@ -1,0 +1,18 @@
+* {
+    background-image: url("bliss.jpg");
+    background-repeat: no-repeat;
+}
+
+.error {
+    animation: display 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.start-menu-win {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.start-menu-win.active-menu {
+    opacity: 1;
+}
