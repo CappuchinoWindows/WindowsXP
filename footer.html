@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <title>Footer</title>
+</head>
+<body>
+
+    <footer class="barra_tareas">
+        <section class="barra_izquierda">
+            <button id = "boton_inicio">
+                <img src="img/boton_inicio.png" class="icono_inicio" alt="Inicio">
+            </button>
+            <div class="bloc_de_notas">
+                <img src="img/icono_bloc_notas.webp" class="icono_notas" alt="Bloc de notas">
+            </div>
+        </section>
+
+        <section>
+            <div class="barra_derecha">
+                <img src="img/icono_internet.png" class="tray-icon" alt="Internet">
+                <img src="img/icono_bateria.png" class="tray-icon" alt="Batería">
+                <button class="clock" id="clock-btn"></button>
+            </div>
+        </section>
+
+    </footer>
+    <div id="calendar-xp" class="calendar-xp hidden">
+        <div class="cal-header-xp">
+            <button id="prev-month" class="cal-btn-xp">&lt;</button>
+            <span id="month-year" class="cal-title-xp"></span>
+            <button id="next-month" class="cal-btn-xp">&gt;</button>
+        </div>
+
+        <table class="cal-table-xp">
+            <thead>
+                <tr>
+                    <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th>
+                    <th>Fri</th><th>Sat</th><th>Sun</th>
+                </tr>
+            </thead>
+            <tbody id="cal-body-xp"></tbody>
+        </table>
+
+        <div class="cal-footer-xp">
+            Today: <span id="today-xp"></span>
+        </div>
+    </div>
+
+    <script src="hour.js"></script>
+</body>
+</html>
