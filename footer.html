@@ -7,15 +7,23 @@
     <title>Footer</title>
 </head>
 <body>
+    <div id="clippy-container" class="clippy-popup">
+        <img src="img/clippy.png" class="clippy-img" alt="Clippy">
+
+        <div class="clippy-message">
+            <button id="clippy-close" class="clippy-close">x</button>
+            <p>Que se dice perrito, aquí Clippy a la orden pal desorden, ¿Qué hay pa' hacer hoy?</p>
+        </div>
+    </div>
 
     <footer class="barra_tareas">
         <section class="barra_izquierda">
             <button id = "boton_inicio">
                 <img src="img/boton_inicio.png" class="icono_inicio" alt="Inicio">
             </button>
-            <div class="bloc_de_notas">
+            <a class="bloc_de_notas" href="PONER AQUI APP BLOC DE NOTAS">
                 <img src="img/icono_bloc_notas.webp" class="icono_notas" alt="Bloc de notas">
-            </div>
+            </a>
         </section>
 
         <section>
@@ -48,7 +56,6 @@
             Hoy: <span id="hoy"></span>
         </div>
     </div>
-
     <script src="hour.js"></script>
 </body>
 </html>

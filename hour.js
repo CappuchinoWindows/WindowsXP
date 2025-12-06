@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const closeBtn = document.getElementById("clippy-close");
+    const clippyContainer = document.getElementById("clippy-container");
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            clippyContainer.style.display = "none";
+        });
+    }
+});
+
+document.getElementById("boton_inicio").addEventListener("click", () => {
+    window.location.href = "PONER AQUI LINK PAGINA DEL SISTEMA OPERATIVO";
+});
 
 function actualizarHora() {
     const reloj = document.querySelector(".reloj");
