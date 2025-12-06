@@ -1,6 +1,6 @@
 
 function actualizarHora() {
-    const clock = document.querySelector(".clock");
+    const reloj = document.querySelector(".reloj");
     const ahora = new Date();
 
     let horas = ahora.getHours();
@@ -22,7 +22,7 @@ function actualizarHora() {
 
     minutos = minutos.toString().padStart(2, "0");
 
-    clock.textContent = `${horas}:${minutos} ${periodo}`;
+    reloj.textContent = `${horas}:${minutos} ${periodo}`;
 }
 
 setInterval(actualizarHora, 1000);
@@ -30,24 +30,24 @@ setInterval(actualizarHora, 1000);
 actualizarHora();
 
 
-const calendar = document.getElementById("calendar-xp");
-const monthYear = document.getElementById("month-year");
-const calBody = document.getElementById("cal-body-xp");
-const todayFooter = document.getElementById("today-xp");
+const calendar = document.getElementById("calendario");
+const monthYear = document.getElementById("mes_año");
+const calBody = document.getElementById("estructura_calendario");
+const todayFooter = document.getElementById("hoy");
 
 let currentDate = new Date();
 
-document.getElementById("clock-btn").addEventListener("click", () => {
+document.getElementById("boton_reloj").addEventListener("click", () => {
     calendar.classList.toggle("hidden");
     updateCalendar();
 });
 
-document.getElementById("prev-month").addEventListener("click", () => {
+document.getElementById("mes_anterior").addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() - 1);
     updateCalendar();
 });
 
-document.getElementById("next-month").addEventListener("click", () => {
+document.getElementById("mes_siguiente").addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
     updateCalendar();
 });
@@ -56,7 +56,7 @@ function updateCalendar() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
-    monthYear.textContent = currentDate.toLocaleString("en-us", { month: "long" }) + " " + year;
+    monthYear.textContent = currentDate.toLocaleString("es-mx", { month: "long" }) + " " + year;
 
     const firstDay = new Date(year, month, 1).getDay();
     const adjustedFirstDay = (firstDay === 0 ? 7 : firstDay) - 1;
@@ -80,10 +80,10 @@ function updateCalendar() {
             d.getMonth() === today.getMonth() &&
             d.getFullYear() === today.getFullYear()
         ) {
-            classes += "today-xp ";
+            classes += "hoy";
         }
 
-        html += `<td class="${classes}" onclick="selectDayXP(this)">${day}</td>`;
+        html += `<td class="${classes}" onclick="dia_elegido">${day}</td>`;
 
         if (d.getDay() === 0) {
             html += "</tr><tr>";
@@ -103,6 +103,6 @@ function updateCalendar() {
 }
 
 function selectDayXP(cell) {
-    document.querySelectorAll(".selected-xp").forEach(el => el.classList.remove("selected-xp"));
-    cell.classList.add("selected-xp");
+    document.querySelectorAll(".dia_elegido").forEach(el => el.classList.remove("dia_elegido"));
+    cell.classList.add("dia_elegido");
 }

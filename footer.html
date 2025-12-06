@@ -22,30 +22,30 @@
             <div class="barra_derecha">
                 <img src="img/icono_internet.png" class="tray-icon" alt="Internet">
                 <img src="img/icono_bateria.png" class="tray-icon" alt="Batería">
-                <button class="clock" id="clock-btn"></button>
+                <button class="reloj" id="boton_reloj"></button>
             </div>
         </section>
 
     </footer>
-    <div id="calendar-xp" class="calendar-xp hidden">
-        <div class="cal-header-xp">
-            <button id="prev-month" class="cal-btn-xp">&lt;</button>
-            <span id="month-year" class="cal-title-xp"></span>
-            <button id="next-month" class="cal-btn-xp">&gt;</button>
+    <div id="calendario" class="calendario hidden">
+        <div class="calendario_arriba">
+            <button id="mes_anterior" class="boton_calendario">&lt;</button>
+            <span id="mes_año" class="calendario_titulo"></span>
+            <button id="mes_siguiente" class="boton_calendario">&gt;</button>
         </div>
 
-        <table class="cal-table-xp">
+        <table class="calendario_cuadricula">
             <thead>
                 <tr>
-                    <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th>
-                    <th>Fri</th><th>Sat</th><th>Sun</th>
+                    <th>Lun</th><th>Mar</th><th>Mie</th><th>Jue</th>
+                    <th>Vie</th><th>Sab</th><th>Dom</th>
                 </tr>
             </thead>
-            <tbody id="cal-body-xp"></tbody>
+            <tbody id="estructura_calendario"></tbody>
         </table>
 
-        <div class="cal-footer-xp">
-            Today: <span id="today-xp"></span>
+        <div class="calendario_patas">
+            Hoy: <span id="hoy"></span>
         </div>
     </div>
 

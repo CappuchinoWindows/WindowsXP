@@ -63,7 +63,7 @@
     margin-right: 6px;
 }
 
-.clock {
+.reloj {
     background: rgba(0,0,0,0.2);
     border: 0.1rem solid rgba(255,255,255,0.3);
     border-radius: 0.3rem;
@@ -73,11 +73,11 @@
     cursor: pointer;
 }
 
-.clock:hover {
+.reloj:hover {
     background: rgba(255,255,255,0.15);
 }
 
-.calendar-xp {
+.calendario {
     position: fixed;
     bottom: 2.5rem;
     right: 0.4rem;
@@ -97,7 +97,7 @@
     display: none;
 }
 
-.cal-header-xp {
+.calendario_arriba {
     background: linear-gradient(to bottom, #2b78d4, #0055a5);
     padding: 5px;
     display: flex;
@@ -111,7 +111,7 @@
     border-bottom: 1px solid #003c74;
 }
 
-.cal-btn-xp {
+.boton_calendario {
     background: #e1e1e1;
     border: 1px solid #707070;
     width: 22px;
@@ -122,46 +122,46 @@
     padding: 0;
 }
 
-.cal-btn-xp:hover {
+.boton_calendario:hover {
     background: #ffffff;
 }
 
-.cal-table-xp {
+.calendario_cuadricula {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
     font-size: 12px;
 }
 
-.cal-table-xp th {
+.calendario_cuadricula th {
     background: #d6e7ff;
     border-bottom: 1px solid #a1b9d6;
     padding: 3px;
 }
 
-.cal-table-xp td {
+.calendario_cuadricula td {
     width: 28px;
     height: 22px;
     padding: 2px;
     cursor: pointer;
 }
 
-.cal-table-xp td:hover {
+.calendario_cuadricula td:hover {
     background: #c0d7ff;
 }
 
-.selected-xp {
+.dia_elegido {
     background: #2c56dd !important;
     color: white !important;
     border: 1px solid #062077;
 }
 
-.today-xp {
+.hoy {
     background: #fffbcc;
     border: 1px solid #d4c000;
 }
 
-.cal-footer-xp {
+.calendario_patas {
     padding: 5px;
     font-size: 12px;
     border-top: 1px solid #cccccc;
