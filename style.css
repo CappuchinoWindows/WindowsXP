@@ -49,6 +49,78 @@ body{
     transform: scale(1.1);
 }
 
+#buscaminas-contenedor {
+    margin-top: 20px;
+    display: none;
+    width: fit-content;
+    height: fit-content ;
+}
+
+.buscaminas-oculto {
+    display: none !important;
+}
+
+#tablero {
+    display: grid;  
+    grid-template-columns: repeat(9, 30px); /* o la cantidad de columnas que uses */
+    background: #e0e0e0;
+    padding: 10px;
+    border: 3px solid #fff;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.contador{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    background: black;
+    color: red;
+    padding: 5px 10px;
+}
+.cara{
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+#tablero{
+    display: grid;
+    background: #808080;
+    padding: 5px;
+    border: 3px solid #fff;
+}
+.celda{
+    width: 30px;
+    height: 30px;
+    background: #bdbdbd;
+    border: 2px solid #fff;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.revelada{
+    background: #dcdcdc;
+    border: 1px solid #808080;
+}
+
+.c1 {color: blue;}
+.c2 {color :green;}
+.c3 {color: red;}
+.c4 {color :navy;}
+.c5 {color: brown;}
+.c6 {color :cyan;}
+.c7 {color: black;}
+.c8 {color :gray;}
+
+
+
+
+
+
+
 @keyframes fadeIn{
     from{opacity: 0;}
     to{opacity: 1;}

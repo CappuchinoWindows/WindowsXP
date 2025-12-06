@@ -7,10 +7,19 @@
     <title>Boton Flotante</title>
 </head>
 <body>
-    <h1>CONTENIDO DE PAGINA</h1>
-    <p>el boton esta fijo abajo a la izquierda. haz clici para ver la imagen.</p>
 
     <button class="boton-windows" onclick="toggleImagen()">Inicio</button>
+    <div id="buscaminas-contenedor" class="buscaminas-oculto">
+        <div id="buscaminas">
+            <div class="buscaminas-header">
+                <div class="contador" id="minas-restantes">010</div>
+                <div class="cara" id="reinicio-cara">😊</div>
+                <div class="contador" id="tiempo">000</div>
+            </div>
+            <div id="tablero"></div>
+        </div>
+    </div>
+    <button class="boton-buscaminas" onclick="toggleBuscaminas()">Buscaminas</button>
 
 
     <div id="cerrar" class="cerrar-imagen" onclick="cerrarImagen()">
