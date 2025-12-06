@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
 document.getElementById("boton_inicio").addEventListener("click", () => {
-    window.location.href = "PONER AQUI LINK PAGINA DEL SISTEMA OPERATIVO";
+    toggleImagen();
 });
 
 function actualizarHora() {

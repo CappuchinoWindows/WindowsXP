@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+
     <title>Footer</title>
 </head>
 <body>
@@ -18,9 +20,9 @@
 
     <footer class="barra_tareas">
         <section class="barra_izquierda">
-            <button id = "boton_inicio">
+            <button id="boton_inicio" class="boton-windows" onclick="toggleImagen()">
                 <img src="img/boton_inicio.png" class="icono_inicio" alt="Inicio">
-            </button>
+            </button>     
             <a class="bloc_de_notas" href="PONER AQUI APP BLOC DE NOTAS">
                 <img src="img/icono_bloc_notas.webp" class="icono_notas" alt="Bloc de notas">
             </a>
@@ -35,6 +37,11 @@
         </section>
 
     </footer>
+    <div id="cerrar" class="cerrar-imagen" onclick="cerrarImagen()">
+        <div class="menu-windows" onclick="event.stopPropagation()">
+            <img src="/WindowsXP/img/menu-inicio.png" class="imagen-menu-windows">
+        </div>
+    </div> 
     <div id="calendario" class="calendario hidden">
         <div class="calendario_arriba">
             <button id="mes_anterior" class="boton_calendario">&lt;</button>
@@ -56,6 +63,9 @@
             Hoy: <span id="hoy"></span>
         </div>
     </div>
+    <script src="javaScript.js"></script>
     <script src="hour.js"></script>
+
+    
 </body>
 </html>
