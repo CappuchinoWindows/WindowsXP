@@ -1,0 +1,103 @@
+body {
+    font-family: Tahoma, sans-serif;
+    background-image: url(../assets/bliss.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.escritorio {
+    padding: 2rem;
+}
+
+.titulo-apps {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.iconos-apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 2rem;
+    max-width: 600px;
+}
+
+.icono-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icono-app:hover {
+    transform: scale(1.1);
+}
+
+.icono-app img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+}
+
+.icono-app p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Ventana estilo XP */
+.ventana-xp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: #ece9d8;
+    border: 2px solid #0054e3;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+    z-index: 10000;
+}
+
+.ventana-header {
+    background: linear-gradient(to bottom, #0997ff, #0053ee);
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+}
+
+.btn-cerrar {
+    background: #e81123;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.btn-cerrar:hover {
+    background: #c41020;
+}
+
+.ventana-contenido {
+    padding: 2rem;
+    font-size: 1rem;
+    color: #000;
+}
+
+.hidden {
+    display: none;
+}
