@@ -1,0 +1,275 @@
+/* ================================
+   🔵 ESTILO GENERAL DEL ESCRITORIO
+================================ */
+body {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    background-image: url(../assets/bliss.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.escritorio {
+    padding: 2rem;
+}
+
+.titulo-apps {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.iconos-apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 2rem;
+    max-width: 600px;
+}
+
+.icono-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icono-app:hover {
+    transform: scale(1.1);
+}
+
+.icono-app img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+}
+
+.icono-app p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ================================
+   🔵 VENTANA ESTILO WINDOWS XP
+================================ */
+.ventana-xp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: #ece9d8;
+    border: 2px solid #0054e3;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+    z-index: 10000;
+}
+
+.ventana-header {
+    background: linear-gradient(to bottom, #0997ff, #0053ee);
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+}
+
+.btn-cerrar {
+    background: #e81123;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.btn-cerrar:hover {
+    background: #c41020;
+}
+
+.ventana-contenido {
+    padding: 2rem;
+    font-size: 1rem;
+    color: #000;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================================
+   🔵 BOTÓN WINDOWS Y MENÚ
+================================ */
+.boton-windows {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 120px;
+    height: 60px;
+    background-color: green;
+    color: aliceblue;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s;
+    font-size: 24px;
+}
+
+.boton-windows:hover {
+    transform: scale(1.1);
+}
+
+.cerrar-imagen {
+    position: fixed;
+    bottom: 60px;
+    left: 0.5px;
+    display: none;
+    z-index: 9999;
+}
+
+.menu-windows {
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 350px;
+    position: relative;
+    box-sizing: border-box;
+    animation: aparecer 0.25s ease-out;
+}
+
+.imagen-menu-windows {
+    width: 130%;
+    height: auto;
+}
+
+/* ================================
+   🔵 BUSCAMINAS
+================================ */
+#buscaminas-contenedor {
+    margin-top: 20px;
+    display: none;
+    width: fit-content;
+    height: fit-content;
+}
+
+.buscaminas-oculto {
+    display: none !important;
+}
+
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(9, 30px);
+    background: #808080;
+    padding: 5px;
+    border: 3px solid #fff;
+    gap: 2px;
+}
+
+.celda {
+    width: 30px;
+    height: 30px;
+    background: #bdbdbd;
+    border: 2px solid #fff;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.revelada {
+    background: #dcdcdc;
+    border: 1px solid #808080;
+}
+
+.c1 { color: blue; }
+.c2 { color: green; }
+.c3 { color: red; }
+.c4 { color: navy; }
+.c5 { color: brown; }
+.c6 { color: cyan; }
+.c7 { color: black; }
+.c8 { color: gray; }
+
+.contador {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    background: black;
+    color: red;
+    padding: 5px 10px;
+}
+
+.cara {
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ================================
+   🔵 ANIMACIONES
+================================ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ================================
+   🔵 RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+    .cerrar-imagen {
+        bottom: 80px;
+        left: 15px;
+    }
+
+    .menu-windows {
+        width: 280px;
+        padding: 15px;
+    }
+
+    .imagen-menu-windows {
+        max-width: 240px;
+        width: 100%;
+    }
+
+    .boton-windows {
+        width: 90px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cerrar-imagen {
+        bottom: 70px;
+        left: 10px;
+    }
+
+    .menu-windows {
+        width: 90%;
+    }
+
+    .imagen-menu-windows {
+        max-width: 200px;
+    }
+
+    .boton-windows {
+        width: 80px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+

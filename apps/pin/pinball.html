@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pinball.css">
+    <title>3D Pinball - Space Cadet</title>
+</head>
+<body>
+    <div class="game-window">
+        <!-- Barra superior típica de Windows -->
+        <div class="title-bar">
+            <div class="title-text">3D Pinball for Windows - Space Cadet</div>
+            <div class="window-buttons">
+                <button class="win-btn">_</button>
+                <button class="win-btn">□</button>
+                <button class="win-btn">✕</button>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <!-- Panel derecho de info -->
+            <div class="info-panel-right">
+                <div class="panel-section">
+                    <img src="../assets/pinball.png" alt="Space Cadet Logo" class="logo-img">
+                </div>
+                
+                <div class="panel-section score-panel">
+                    <div class="label-red">BALL</div>
+                    <div class="digital-display" id="ballDisplay">1</div>
+                </div>
+
+                <div class="panel-section score-panel">
+                    <div class="digital-display large" id="scoreDisplay">0</div>
+                </div>
+
+                <div class="panel-section">
+                    <div class="label-blue">Player 1</div>
+                </div>
+
+                <div class="panel-section mission-panel">
+                    <div class="mission-text" id="missionText">Awaiting Deployment</div>
+                </div>
+
+                <div class="panel-section high-scores">
+                    <div class="high-score-title">HIGH SCORES</div>
+                    <div class="high-score-list" id="highScoresList">
+                        <div>1. 1,000,000</div>
+                        <div>2. 500,000</div>
+                        <div>3. 250,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mesa de pinball -->
+            <canvas id="pinballCanvas"></canvas>
+        </div>
+
+        <!-- Controles en la parte inferior -->
+        <div class="control-bar">
+            <div class="control-hint">Z - Left Flipper</div>
+            <div class="control-hint">/ - Right Flipper</div>
+            <div class="control-hint">SPACE - Launch Ball</div>
+            <div class="control-hint">F2 - New Game</div>
+        </div>
+    </div>
+
+    <script src="pinball.js"></script>
+</body>
+</html>
