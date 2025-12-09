@@ -1,21 +1,22 @@
-// Hacer ventanas arrastrables
+// ========== Ventanas arrastrables ==========
 $(".error").draggable();
 
-// Animación al crear nuevas ventanas
 $('body').on('click', '.ok', function(){
     var nuevaVentana = '<div class="error">' + $('.error').html() + '</div>';
     $('body').append(nuevaVentana);
+
     $('.error').last().css({ 
-        top: y + 'px', 
-        left: x + 'px'
+        top: Math.random() * 200 + 'px',
+        left: Math.random() * 200 + 'px'
     }).draggable();
 });
 
-// Toggle del menú Start
+// ========== START MENU ==========
 $(".start-btn").click(function(){
     $('.start-menu-win').toggleClass('active-menu');
 });
 
+// ========== WINAMP VARIABLES ==========
 const audioPlayer = document.getElementById('audioPlayer');
 const btnPlay = document.getElementById('btnPlay');
 const btnPause = document.getElementById('btnPause');
@@ -32,116 +33,125 @@ const playlistItems = document.getElementById('playlistItems');
 let playlist = [];
 let currentTrackIndex = 0;
 
-// Cargar archivos de audio
+// ========== Cargar archivos ==========
 audioFileInput.addEventListener('change', function(e) {
     const files = Array.from(e.target.files);
+
     playlist = files.map((file, index) => ({
         name: file.name,
         url: URL.createObjectURL(file),
-        index: index
+        index
     }));
-    
+
     renderPlaylist();
-    if (playlist.length > 0) {
-        loadTrack(0);
-    }
+    if (playlist.length > 0) loadTrack(0);
 });
 
-// Renderizar playlist
+// ========== Cargar carpeta ==========
+const folderInput = document.getElementById('audioFolder');
+
+folderInput.addEventListener('change', function(e) {
+    const files = Array.from(e.target.files).filter(file => file.type.startsWith('audio/'));
+
+    // Mapear a playlist y añadir al final de la playlist existente
+    const newTracks = files.map((file, index) => ({
+        name: file.name,
+        url: URL.createObjectURL(file),
+        index: playlist.length + index
+    }));
+
+    playlist = playlist.concat(newTracks);
+
+    renderPlaylist();
+    if (playlist.length > 0 && audioPlayer.src === "") loadTrack(0);
+});
+
+
+// ========== Render Playlist ==========
 function renderPlaylist() {
-    playlistItems.innerHTML = '';
+    playlistItems.innerHTML = "";
+
     playlist.forEach((track, index) => {
-        const item = document.createElement('div');
-        item.className = 'playlist-item';
+        const item = document.createElement("div");
+        item.className = "playlist-item";
         item.textContent = `${index + 1}. ${track.name}`;
-        item.onclick = () => loadTrack(index);
+
+        item.onclick = () => {
+            loadTrack(index);
+            audioPlayer.play();
+        };
+
         playlistItems.appendChild(item);
     });
 }
 
-// Cargar pista
+// ========== Cargar pista ==========
 function loadTrack(index) {
-    if (playlist.length === 0) return;
-    
     currentTrackIndex = index;
     audioPlayer.src = playlist[index].url;
     trackTitle.textContent = playlist[index].name;
-    
-    // Marcar pista activa en playlist
-    document.querySelectorAll('.playlist-item').forEach((item, i) => {
-        item.classList.toggle('active', i === index);
+
+    document.querySelectorAll(".playlist-item").forEach((item, i) => {
+        item.classList.toggle("active", i === index);
     });
 }
 
-// Controles de reproducción
-btnPlay.addEventListener('click', () => {
-    audioPlayer.play();
-});
-
-btnPause.addEventListener('click', () => {
-    audioPlayer.pause();
-});
-
-btnStop.addEventListener('click', () => {
+// ========== Botones ==========
+btnPlay.onclick = () => audioPlayer.play();
+btnPause.onclick = () => audioPlayer.pause();
+btnStop.onclick = () => {
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
-});
-
-btnNext.addEventListener('click', () => {
+};
+btnNext.onclick = () => {
     currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
     loadTrack(currentTrackIndex);
     audioPlayer.play();
-});
-
-btnPrev.addEventListener('click', () => {
+};
+btnPrev.onclick = () => {
     currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
     loadTrack(currentTrackIndex);
     audioPlayer.play();
-});
+};
 
-// Control de volumen
-volumeSlider.addEventListener('input', (e) => {
+// ========== Volumen ==========
+volumeSlider.oninput = e => {
     audioPlayer.volume = e.target.value / 100;
-});
+};
 
-// Actualizar progreso
-audioPlayer.addEventListener('timeupdate', () => {
-    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-    progressSlider.value = progress || 0;
-    
-    const minutes = Math.floor(audioPlayer.currentTime / 60);
-    const seconds = Math.floor(audioPlayer.currentTime % 60);
-    trackTime.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-});
+// ========== Progreso ==========
+audioPlayer.ontimeupdate = () => {
+    if (!audioPlayer.duration) return;
 
-// Buscar en la pista
-progressSlider.addEventListener('input', (e) => {
-    const time = (e.target.value / 100) * audioPlayer.duration;
-    audioPlayer.currentTime = time;
-});
+    progressSlider.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
 
-// Auto-siguiente cuando termina la pista
-audioPlayer.addEventListener('ended', () => {
-    btnNext.click();
-});
+    let m = Math.floor(audioPlayer.currentTime / 60);
+    let s = Math.floor(audioPlayer.currentTime % 60);
+    trackTime.textContent = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+};
 
-// Visualizador simple
+progressSlider.oninput = e => {
+    audioPlayer.currentTime = (e.target.value / 100) * audioPlayer.duration;
+};
+
+// ========== Auto Next ==========
+audioPlayer.onended = () => btnNext.click();
+
+// ========== VISUALIZER ==========
 const canvas = document.getElementById('visualizerCanvas');
 const ctx = canvas.getContext('2d');
 
 function drawVisualizer() {
-    const bars = 20;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    for (let i = 0; i < bars; i++) {
-        const height = Math.random() * canvas.height;
-        ctx.fillStyle = '#00FF00';
-        ctx.fillRect(i * 4, canvas.height - height, 3, height);
+
+    for (let i = 0; i < 20; i++) {
+        const h = Math.random() * canvas.height;
+        ctx.fillStyle = "#00FF00";
+        ctx.fillRect(i * 4, canvas.height - h, 3, h);
     }
-    
-    if (!audioPlayer.paused) {
-        requestAnimationFrame(drawVisualizer);
-    }
+
+    if (!audioPlayer.paused) requestAnimationFrame(drawVisualizer);
 }
 
-audioPlayer.addEventListener('play', drawVisualizer);
+audioPlayer.onplay = () => requestAnimationFrame(drawVisualizer);
+

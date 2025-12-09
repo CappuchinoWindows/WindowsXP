@@ -81,11 +81,16 @@
             </div>
 
             <!-- Selector de archivos -->
-            <div class="file-selector">
-                <input type="file" id="audioFile" accept="audio/*" multiple>
-                <label for="audioFile" class="btn-load">Cargar Audio</label>
-            </div>
+            <!-- Selector de archivos -->
+        <div class="file-selector">
+            <input type="file" id="audioFile" accept="audio/*" multiple>
+            <!-- <label for="audioFile" class="btn-load"></label> -->
+
+    <!-- Nuevo input para carpeta -->
+            <input class="btn-load" type="file" id="audioFolder" webkitdirectory directory multiple>
+            <!-- <label for="audioFolder" class="btn-load">Cargar Carpeta de Audio</label> -->
         </div>
+
 
         <!-- Playlist -->
         <div class="playlist" id="playlist">
@@ -97,6 +102,12 @@
     </div>
 
     <audio id="audioPlayer" preload="auto"></audio>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery UI para draggable -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<!-- Tu script -->
     <script src="winamp.js"></script>
+
 </body>
 </html>
