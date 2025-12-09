@@ -12,12 +12,18 @@
         <h1 class="titulo-apps">Mis programas</h1>
         
         <div class="iconos-apps">
+
+            <div class="icono-app" data-app="buscaminas">
+                <img src="../assets/png-transparent-minesweeper-go-classic-mines-game-cannon-shoot-game-fabulous-bubbles-android-game-angle-minesweeper.png" alt="Buscaminas">
+                <p>Buscaminas</p>
+            </div>
+
             <div class="icono-app" data-app="winamp">
                 <img src="../assets/winamp.png" alt="Winamp">
                 <p>Winamp</p>
             </div>
             
-            <div class="icono-app" data-app="pinball" id="pinball-icon">
+            <div class="icono-app" data-app="pinball">
                 <img src="../assets/pinball.png" alt="3D Pinball">
                 <p>3D Pinball</p>
             </div>
@@ -31,20 +37,24 @@
                 <img src="../assets/paint.jpg" alt="Paint">
                 <p>Paint</p>
             </div>
+
         </div>
     </div>
 
-    <!-- Ventana flotante de aplicación -->
+    <!-- Ventana XP -->
     <div id="ventana-app" class="ventana-xp hidden">
         <div class="ventana-header">
             <span id="ventana-titulo">Aplicación</span>
             <button id="cerrar-ventana" class="btn-cerrar">X</button>
         </div>
-        <div class="ventana-contenido">
-            <p id="app-contenido">Contenido de la aplicación</p>
+
+        <div class="ventana-contenido" id="app-contenido">
+            <!-- Aquí se cargará el contenido dinámicamente -->
         </div>
     </div>
 
+
     <script src="script.js"></script>
+    <script src="buscaminas.js"></script>
 </body>
 </html>
