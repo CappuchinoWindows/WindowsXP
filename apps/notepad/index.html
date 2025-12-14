@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="notepad.css">
+</head>
+<body>
+    <div id="notepad-window" class="window-xp hidden"> 
+        <div class="title-bar"> 
+            <span class="title-text">Sin título - Bloc de notas</span> 
+            <div class="window-controls"> 
+                <button class="control-button minimize" onclick="minimizarNotepad()">-</button> 
+                <button class="control-button maximaze" onclick="toggleMaximizarNotepad()"> 
+                    <span id="notepad-maximize-icon">[]</span>
+                </button> 
+                <button class="control-button close" onclick="cerrarNotepad()">X</button>
+            </div>
+        </div> 
+        <div class="window-content"> 
+            <pre id="notepad-content"> 
+            Mi mamá:"¿por qué estás tan triste?" 
+            Yo:"Hice un cambio pequeño en producción..." 
+            Mi mamá:"Bueno,deshazlo." 
+            Yo: llora en git
+            </pre>
+        </div>
+    </div>
+    <script src="notepad.js"></script>
+</body>
+</html>

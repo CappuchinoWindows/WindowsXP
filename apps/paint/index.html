@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Clásico de Windows XP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="paint-container">
+        <!-- Barra de herramientas -->
+        <div class="toolbar">
+            <button class="tool-btn" id="btn-pencil">Pincel</button>
+            <button class="tool-btn" id="btn-eraser">Borrador</button>
+            <div class="color-picker">
+                <label for="color">Color:</label>
+                <input type="color" id="color" value="#000000">
+            </div>
+        </div>
+        
+        <!-- Lienzo para dibujar -->
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <!-- Barra de estado -->
+        <div class="status-bar">
+            <p>Listo</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

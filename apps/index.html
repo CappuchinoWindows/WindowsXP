@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP - Aplicaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="escritorio">
+        <h1 class="titulo-apps">Mis programas</h1>
+        
+        <div class="iconos-apps">
+
+            <div class="icono-app" data-app="buscaminas">
+                <img src="../assets/png-transparent-minesweeper-go-classic-mines-game-cannon-shoot-game-fabulous-bubbles-android-game-angle-minesweeper.png" alt="Buscaminas">
+                <p>Buscaminas</p>
+            </div>
+
+            <div class="icono-app" data-app="winamp">
+                <img src="../assets/winamp.png" alt="Winamp">
+                <p>Winamp</p>
+            </div>
+            
+            <div class="icono-app" data-app="pinball">
+                <img src="../assets/pinball.png" alt="3D Pinball">
+                <p>3D Pinball</p>
+            </div>
+            
+            <div class="icono-app" data-app="calculadora">
+                <img src="../assets/calculator.jpg" alt="Calculadora">
+                <p>Calculadora</p>
+            </div>
+            
+            <div class="icono-app" data-app="paint">
+                <img src="../assets/paint.jpg" alt="Paint">
+                <p>Paint</p>
+            </div>
+            <div class="icono-app" data-app="papelera">
+                <img src="../assets/icono_papelera.png" alt="Papelera">
+                <p>Papelera</p>
+            </div>
+            <div class="icono-app" data-app="notepad">
+                <img src="../assets/icono_bloc_notas.webp" alt="notepad">
+                <p>Bloc de notas</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Ventana XP -->
+    <div id="ventana-app" class="ventana-xp hidden">
+        <div class="ventana-header">
+            <span id="ventana-titulo">Aplicación</span>
+            <button id="cerrar-ventana" class="btn-cerrar">X</button>
+        </div>
+
+        <div class="ventana-contenido" id="app-contenido">
+            <!-- Aquí se cargará el contenido dinámicamente -->
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="buscaminas.js"></script>
+</body>
+</html>

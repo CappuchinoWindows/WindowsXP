@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winamp Player</title>
+    <link rel="stylesheet" href="winamp.css">
+</head>
+<body>
+    <div class="winamp-player">
+        <!-- ==================== BARRA DE TÍTULO ==================== -->
+        <!-- Muestra el nombre del reproductor y botones de control de ventana -->
+        <div class="title-bar">
+            <div class="title-text">*** Winamp v2.95 ***</div>
+            <div class="title-controls">
+                <button class="btn-minimize">_</button>
+                <button class="btn-close">X</button>
+            </div>
+        </div>
+
+        <!-- ==================== VENTANA PRINCIPAL ==================== -->
+        <div class="main-window">
+
+            <!-- DISPLAY DIGITAL: Muestra el nombre de la canción y el tiempo -->
+            <div class="display">
+                <div class="track-info">
+                    <div class="track-title" id="trackTitle">No track loaded</div>
+                    <div class="track-time" id="trackTime">00:00</div>
+                </div>
+
+                <!-- VISUALIZADOR: Canvas para animación de barras de audio -->
+                <div class="visualizer" id="visualizer">
+                    <canvas id="visualizerCanvas" width="76" height="16"></canvas>
+                </div>
+            </div>
+
+            <!-- ==================== CONTROLES DE VOLUMEN Y BALANCE ==================== -->
+            <!-- Sliders para ajustar el volumen y el balance del audio -->
+            <div class="sliders">
+                <div class="slider-container">
+                    <input type="range" id="volume" min="0" max="100" value="50" class="slider">
+                    <label>VOL</label>
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="balance" min="-100" max="100" value="0" class="slider">
+                    <label>BAL</label>
+                </div>
+            </div>
+
+            <!-- ==================== BOTONES DE CONTROL ==================== -->
+            <!-- Controles principales: Anterior, Play, Pausa, Stop, Siguiente -->
+            <div class="controls">
+                <button class="btn-control" id="btnPrev" title="Anterior">⏮</button>
+                <button class="btn-control" id="btnPlay" title="Reproducir">▶</button>
+                <button class="btn-control" id="btnPause" title="Pausar">⏸</button>
+                <button class="btn-control" id="btnStop" title="Detener">⏹</button>
+                <button class="btn-control" id="btnNext" title="Siguiente">⏭</button>
+            </div>
+
+            <!-- ==================== BARRA DE PROGRESO ==================== -->
+            <!-- Slider para ver y controlar el progreso de la canción -->
+            <div class="progress-bar">
+                <input type="range" id="progress" min="0" max="100" value="0" class="progress-slider">
+            </div>
+
+            <!-- ==================== ECUALIZADOR ==================== -->
+            <!-- 5 bandas de frecuencia para ajustar el audio -->
+            <div class="equalizer">
+                <div class="eq-band">
+                    <input type="range" orient="vertical" min="0" max="100" value="50">
+                    <span>60Hz</span>
+                </div>
+                <div class="eq-band">
+                    <input type="range" orient="vertical" min="0" max="100" value="50">
+                    <span>170Hz</span>
+                </div>
+                <div class="eq-band">
+                    <input type="range" orient="vertical" min="0" max="100" value="50">
+                    <span>310Hz</span>
+                </div>
+                <div class="eq-band">
+                    <input type="range" orient="vertical" min="0" max="100" value="50">
+                    <span>600Hz</span>
+                </div>
+                <div class="eq-band">
+                    <input type="range" orient="vertical" min="0" max="100" value="50">
+                    <span>1kHz</span>
+                </div>
+            </div>
+
+            <!-- ==================== SELECTOR DE ARCHIVOS ==================== -->
+            <!-- Botón para cargar archivos de audio desde tu computadora -->
+            <div class="file-selector">
+                <input type="file" id="audioFile" accept="audio/*" multiple>
+                <label for="audioFile" class="btn-load">Cargar Audio</label>
+            </div>
+        </div>
+
+        <!-- ==================== PLAYLIST ==================== -->
+        <!-- Lista de canciones cargadas, se puede hacer clic en cualquiera para reproducirla -->
+        <div class="playlist" id="playlist">
+            <div class="playlist-header">Playlist</div>
+            <div class="playlist-items" id="playlistItems">
+                <!-- Las canciones se agregan dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== ELEMENTO DE AUDIO HTML5 ==================== -->
+    <!-- Este es el reproductor de audio invisible que hace funcionar todo -->
+    <audio id="audioPlayer" preload="auto"></audio>
+
+    <!-- ==================== LIBRERÍAS JQUERY ==================== -->
+    <!-- jQuery: Librería JavaScript para manipular el DOM fácilmente -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- jQuery UI: Extensión de jQuery para hacer elementos arrastrables (draggable) -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <!-- ==================== SCRIPT PRINCIPAL ==================== -->
+    <!-- Tu código JavaScript personalizado del Winamp -->
+    <script src="winamp.js"></script>
+</body>
+</html>

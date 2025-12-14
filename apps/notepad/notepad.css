@@ -1,0 +1,121 @@
+/* Estilos específicos para el Bloc de Notas */
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; /* Asegúrate de que el body ocupe toda la pantalla */
+    overflow: hidden; /* Evita barras de desplazamiento */
+    font-family: 'Tahoma', sans-serif; /* Fuente típica de XP */
+    background-image: url('../../assets/bliss.jpg'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+#notepad-window { 
+    position: absolute;
+    top: 50px; /* Deja un espacio desde la parte superior */
+    left: 50px; /* Deja un espacio desde la izquierda */
+    width: 600px; /* Ancho de la ventana */
+    height: 400px; /* Alto de la ventana */
+    background-color: #ECE9D8; /* Gris claro */
+    border: 1px solid #003399; /* Borde azul típico de las ventanas de XP */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidad */
+    z-index: 50; /* Asegura que la ventana esté encima del fondo */
+    font-family: "Courier New", Courier, monospace; /* Fuente monoespaciada */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Ajustes para el contenido de la ventana del Bloc de Notas */
+#notepad-window .window-content {
+    height: calc(100% - 25px); /* Ajustar el contenido debajo de la barra de título */
+    padding: 0; /* Eliminar el padding */
+    overflow: auto; /* Hacer que el contenido se desplace */
+    background-color: #F0F0F0; /* Fondo gris claro */
+}
+
+/* Estilo del área de texto (textarea) */
+#notepad-content {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap; /* Mantener el formato de salto de línea */
+    resize: none; /* Desactiva la opción de redimensionar */
+    outline: none; /* Quita el contorno */
+}
+
+/* Barra de título del Bloc de Notas */
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+    padding: 0 5px;
+    background: linear-gradient(to right, #0055EE, #0088FF);
+    color: white;
+    font-weight: bold;
+    cursor: default;
+}
+
+/* Ajustes para los iconos de control en la barra de título */
+.window-controls {
+    display: flex;
+}
+
+.control-button {
+    width: 20px;
+    height: 18px;
+    margin-left: 2px;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ECE9D8;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid #7F7F7F;
+    border-bottom: 1px solid #7F7F7F;
+    box-shadow: 1px 1px 0 #D4D0C8;
+}
+
+.control-button:active {
+    border-top: 1px solid #7F7F7F;
+    border-left: 1px solid #7F7F7F;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.control-button.close {
+    background-color: #FF5A4F;
+    color: white;
+}
+
+/* Ajustes para el icono del Bloc de Notas en el escritorio */
+.desktop-icon:nth-child(2) {
+    top: 120px; /* Separado más del icono de la Papelera */
+    left: 120px; /* Ajustar la posición a la derecha para que no se superponga */
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Estilo para el área de texto en el Bloc de Notas */
+textarea {
+    width: 100%;
+    height: 100%;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    resize: none; /* Desactiva el redimensionamiento del área de texto */
+    line-height: 1.5;
+}
+

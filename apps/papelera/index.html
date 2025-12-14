@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="papelera.css">
+</head>
+<body>
+    <div id="papelera-window" class="window-xp hidden"> 
+        <div class="title-bar"> 
+            <span class="title-text">Papelera de reciclaje</span> 
+            <div class="window-controls"> 
+                <button class="control-button minimize" onclick="minimizarPapelera()">-</button> 
+                <button class="control-button maximaze" onclick="toggleMaximizarPapelera()"> 
+                    <span id="maximize-icon">[]</span>
+                </button> 
+                <button class="control-button close" onclick="cerrarPapelera()">X</button>
+            </div>
+        </div> 
+        <div class="window-content"> 
+            <h2>El contenido de la papelera iría aquí.</h2> 
+            <p>Simulación de archivos eliminados...</p>
+        </div>
+    </div> 
+
+    <script src="papelera.js"></script>
+</body>
+</html>
