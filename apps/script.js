@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const buscaminasIcon = document.querySelector('[data-app="buscaminas"]');
     const papeleraIcon = document.querySelector('[data-app = "papelera"]');
     const notedpadIcon = document.querySelector('[data-app = "notepad"]');
-
+    const damasIcon = document.querySelector('[data-app = "damas"]');
 
     const ventana = document.getElementById("ventana-app");
     const titulo = document.getElementById("ventana-titulo");
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     paintIcon.onclick = () => window.location.href = "paint/index.html";
     papeleraIcon.onclick = () => window.location.href = "papelera/index.html";
     notedpadIcon.onclick = () => window.location.href = "notepad/index.html";
+    damasIcon.onclick = () => window.location.href = "damas/damas.html";
     // Abrir Buscaminas dentro de la ventana XP
     buscaminasIcon.onclick = () => abrirBuscaminas();
 
