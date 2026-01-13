@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Windows XP - Log On</title>
+  <link rel="stylesheet" href="/desktop/css/login.css" />
+</head>
+<body class="xp-body">
+
+  <!-- Franja superior -->
+  <div class="xp-top-strip"></div>
+
+  <!-- Zona central -->
+  <main class="xp-main">
+    <section class="xp-stage">
+
+      <!-- Bloque izquierdo -->
+      <div class="xp-left">
+        <div class="xp-left-inner">
+          <div class="xp-logo-wrap">
+            <!-- Logo Windows (SVG) -->
+            <svg class="xp-win-flag" viewBox="0 0 56 44" aria-hidden="true">
+              <polygon points="2,6 26,2 26,20 2,20" fill="#f15a24"/>
+              <polygon points="28,2 54,0 54,20 28,20" fill="#7ac943"/>
+              <polygon points="2,22 26,22 26,42 2,38" fill="#00a2e8"/>
+              <polygon points="28,22 54,22 54,44 28,42" fill="#ffcc00"/>
+            </svg>
+
+            <div class="xp-brand">
+              <div class="xp-ms">Microsoft</div>
+              <div class="xp-win">
+                <span>Windows</span><em>xp</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="xp-hint">To begin, click your user name</div>
+        </div>
+      </div>
+
+      <!-- Línea divisoria -->
+      <div class="xp-midline" aria-hidden="true"></div>
+
+      <!-- Bloque derecho -->
+      <div class="xp-right">
+
+        <!-- USUARIO ACTIVO (con password) -->
+        <div class="user-box user-box--active">
+          <div class="user-inner">
+
+            <!-- Slot imagen -->
+            <div class="avatar-slot">
+              <div class="avatar-placeholder">IMG</div>
+            </div>
+
+            <div class="user-content">
+              <div class="user-name">Lucas Melo</div>
+              <div class="user-sub">Type your password</div>
+
+              <div class="user-row">
+                <input class="user-pass" type="password" aria-label="Password Lucas" />
+                <a class="btn-go" href="/desktop/pages/index.html" aria-label="Entrar como Lucas"></a>
+                <a class="btn-help" href="#" aria-label="Ayuda">?</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- USUARIO INACTIVO -->
+        <div class="user-box user-box--inactive">
+          <a class="user-inner user-link" href="/desktop/pages/index.html" aria-label="Entrar como Crystal">
+            <div class="avatar-slot">
+              <div class="avatar-placeholder">IMG</div>
+            </div>
+
+            <div class="user-content">
+              <div class="user-name user-name--small">Crystal</div>
+            </div>
+            <span class="btn-go btn-go--ghost" aria-hidden="true"></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="xp-footer">
+    <div class="power">
+      <span class="power-ico" aria-hidden="true"></span>
+      <span class="power-text">Turn off computer</span>
+    </div>
+
+    <div class="footnote">
+      After you log on, you can add or change accounts<br />
+      Just go to your Control Panel and click User Accounts
+    </div>
+  </footer>
+
+</body>
+</html>
